@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background-color: #212121; color: #ffff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+
+</body>
+<script>
+    //Adding list using Function
+
+    //way-1
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        const lang = document.querySelector('.language');
+        lang.appendChild(li);
+    }
+    addLanguage('Python')
+
+    //way-2
+
+    function OptiLang(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    OptiLang('go Lang')
+    //way-3 {Optimized Way}
+    function addaLanguageOptimized(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addaLanguageOptimized('TypeScript')
+
+    //Edit
+    // way-1
+    const ThirdLang = document.querySelector('li:nth-child(3)')
+    ThirdLang.innerHTML = "Mojo"
+
+    const newli = document.createElement('li')
+    newli.textContent = "C++"
+    ThirdLang.replaceWith(newli)
+
+    //edit
+
+    //const FirstLang = document.querySelector('li:nth-child(1)')
+    const FirstLang = document.querySelector('li:first-child')
+    FirstLang.outerHTML = '<li>React Native </li>'
+
+    //remove
+
+    // const Third =document.querySelector('li:nth-child(3)')
+    // Third.remove()
+
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+
+</script>
+</html>
