@@ -25,8 +25,19 @@ const newNums = myNums
            .filter( (num) => num > 40)
 console.log(newNums);
 
-
+// Anything inside backticks is a STRING unless it is inside ${ } as a real JS expression.
 // Use of filter and map and acessing the properties
+
+
+//map() always returns a NEW array
+//Length of output array = length of input array
+//Used for value transformation
+
+//+++++++++++++++++++++++++++++++++++++++++++Filter++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//filter() always returns an ARRAY.
+//Array contain elements where ondition is true
+// does not modify original Array
+
 const books = [
     { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
     { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
@@ -42,5 +53,26 @@ const books = [
   let userBooks = books.filter( (bk) => {
     return bk.genre === 'History'
   })
-  console.log(userBooks);// By thi
+  console.log(userBooks);// This can filter books having genere History
+
+  //way-1
+   let book_publish_after_1987 = books.filter( (bk)=> bk.publish >= 1987);
+   console.log(`book_publish_after_1987 -: `,book_publish_after_1987);// This can filter book data which are published after 1987
+
+  //Notes-: 
+  // if i do like this, as filter -> return Array , Due to using backtick it stringfy, as a result i can't get desired result, ${book_publish_after_1987} forces implicit string conversion
+  //console.log(object) → shows structured data
+	//Template literals → convert everything to STRING
+
+  //  console.log(`book_publish_after_1987 -: ${book_publish_after_1987}`);// book_publish_after_1987 -: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+
+  // way -2
+  console.log("Book Name which are published aftetr 1989 -:",book_publish_after_1987.map( (bk)=> bk.title).join(" ,"));
+
+  // way -3
+
+  console.log(books.filter( (bk) => bk.publish >= 1989)
+                   .map( (bk)=> bk.title + " -> "+bk.genre)
+                   .join(" ,"));
+  
   
