@@ -3,11 +3,9 @@
 ### Button behavior inside a form
 
 - By default, a `<button>` **inside a `<form>` behaves as a submit button**.
-- This can cause **unintended form submission** if you only wanted a normal button.
 - Therefore, **avoid using `<button>` without a type attribute inside forms**.
 
 ---
-
 ### ❌ Wrong Way
 
 ```html
@@ -26,3 +24,6 @@
     <input type="submit" value="SUBMIT">
 </form>
 ```
+## Events
+### oninput, onchnage, onblurr -> these  Evenets are used while u do Live Validation Of Form
+`Before Submiting , the Data ENtered via form Input Filled use ***onchange , oninput ***  By which while u input data in Input Field then Evenet Triggered -> Live Validation Started for Every Field Input Before Submitting Data`
